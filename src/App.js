@@ -18,20 +18,22 @@ const tareaDatos = [
 function App() {
     return (
         <div className="app">
-        <div className="appLeft centrar">
-            <TareaContador completadas={3} total={15} />
-            <TareaNueva/>
-        </div>
+            <div className="appLeft centrar">
+                <div className="cajonIzquierdo">
+                    <TareaContador completadas={3} total={15} />
+                    <TareaNueva />
+                </div>
+            </div>
 
-        <div className="appRight centrar">
-            <TareaBuscador />
+            <div className="appRight centrar">
+                <TareaBuscador />
 
-            <TareaLista>
-                {tareaDatos.map((task) => (
-                    <TareaItem tarea={task.tarea} completada={task.completada} key={task.tarea} />
-                ))}
-            </TareaLista>
-        </div>
+                <TareaLista>
+                    {tareaDatos.map((task) => (
+                        <TareaItem tarea={task.tarea} completada={task.completada} key={task.tarea} />
+                    ))}
+                </TareaLista>
+            </div>
         </div>
     );
 }

@@ -3,10 +3,10 @@ import "./style/TareaItem.css"
 
 function TareaItem(props) {
   return (
-      <li>
-          <span className="V">V</span>
-          <p>{props.tarea}</p>
-          <span className="X">X</span>
+      <li className={`Item ${props.completada && "Item--completado"}`}>
+          <span className={`icon V ${props.completada && "V--activo"}`}>V</span>
+          <p className={`${props.completada && "tarea--completada"}`}>{props.tarea}</p>
+          <span className="icon X X--activo">X</span>
       </li>
   );
 }

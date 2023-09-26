@@ -1,21 +1,36 @@
-li{
+.Item{
   font-weight: 500;
   width: 70%;
   padding: 10px;
   list-style: none;
-  background-color: rgba(255, 255, 255, 0.462);
+  background-color: aliceblue;
   box-shadow: 1px 1px 8px black;
   margin-bottom: 25px;  border-radius: 10px;
 }
+.Item--completado{
+  background-color: rgba(255, 255, 255, 0.462);
+}
+.tarea--completada{
+  text-decoration: line-through;
+}
 
-.V{
-  color: rgb(0, 171, 28);
+.icon{
+  color: rgb(0, 0, 0);
   font-size: 25px;
   font-weight: 800;
 }
 
+.V{
+  
+}
+.V--activo{
+  color: rgb(82, 255, 66);
+}
+
 .X{
-  color: rgb(0, 0, 0);
-  font-size: 25px;
-  font-weight: 800;
+
+}
+.X:hover{
+  color: red;
+  cursor: pointer;
 }
