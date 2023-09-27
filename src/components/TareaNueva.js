@@ -1,4 +1,4 @@
-import "./style/TareaNueva.css"
+import "../style/TareaNueva.css"
 
 function TareaNueva(){
   return(

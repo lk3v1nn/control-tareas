@@ -1,4 +1,5 @@
-import "./style/TareaLista.css"
+import React from 'react'
+import "../style/TareaLista.css"
 
 function TareaLista(props){
   return(
