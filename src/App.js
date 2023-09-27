@@ -2,11 +2,11 @@
 
 import React from "react";
 
-import { TareaContador } from "./TareaContador";
-import { TareaBuscador } from "./TareaBuscador";
-import { TareaItem } from "./TareaItem";
-import { TareaNueva } from "./TareaNueva";
-import { TareaLista } from "./TareaLista";
+import { TareaContador } from "./components/TareaContador";
+import { TareaBuscador } from "./components/TareaBuscador";
+import { TareaItem } from "./components/TareaItem";
+import { TareaNueva } from "./components/TareaNueva";
+import { TareaLista } from "./components/TareaLista";
 
 const tareaDatos = [
     { tarea: "Aprender React", completada: false },
