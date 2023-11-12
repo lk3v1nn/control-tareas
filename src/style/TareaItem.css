@@ -6,6 +6,8 @@
   background-color: aliceblue;
   box-shadow: 1px 1px 8px black;
   margin-bottom: 25px;  border-radius: 10px;
+  position: relative;
+  display: inline-block;
 }
 .Item--completado{
   background-color: rgba(255, 255, 255, 0.462);
@@ -17,20 +19,31 @@
 .icon{
   color: rgb(0, 0, 0);
   font-size: 25px;
-  font-weight: 800;
+  font-weight: 600;
 }
-
 .V{
-  
+  position: absolute;
+  left: 10px;
+}
+.V:hover{
+  color: rgb(18, 216, 0);
+  cursor: pointer;
 }
 .V--activo{
-  color: rgb(82, 255, 66);
+  color: rgb(18, 216, 0);
 }
 
 .X{
-
+  position: absolute;
+  right: 10px;
+  top: 0;
 }
 .X:hover{
   color: red;
   cursor: pointer;
+}
+
+.text{
+  margin: 0 25px;
+  overflow: hidden;
 }
