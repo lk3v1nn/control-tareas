@@ -4,13 +4,20 @@
   padding: 10px;
   list-style: none;
   background-color: aliceblue;
-  box-shadow: 1px 1px 8px black;
+  box-shadow: 1px 1px 4px black;
   margin-bottom: 25px;  border-radius: 10px;
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s linear;
+}
+.Item:hover{
+  box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.285);
+  margin: 5px 5px 45px 5px;
 }
 .Item--completado{
-  background-color: rgba(255, 255, 255, 0.462);
+  background-color: rgba(255, 255, 255, 0.202);
 }
 .tarea--completada{
   text-decoration: line-through;
@@ -24,10 +31,14 @@
 .V{
   position: absolute;
   left: 10px;
+  top: center;
+  transition: .3s linear;
 }
 .V:hover{
   color: rgb(18, 216, 0);
   cursor: pointer;
+  font-size: 30px;
+  font-weight: 700;
 }
 .V--activo{
   color: rgb(18, 216, 0);
@@ -37,6 +48,7 @@
   position: absolute;
   right: 10px;
   top: 0;
+  font-size: 20px;
 }
 .X:hover{
   color: red;

@@ -1,19 +1,28 @@
 import React from "react";
 import "../style/TareaItem.css";
 
-function TareaItem({ tareas, completar }) {
+function TareaItem({ tareas, completar, eliminar }) {
     return (
         <li className={`Item ${tareas.completada && "Item--completado"}`}>
             <span
                 className={`icon V ${tareas.completada && "V--activo"}`}
-                onClick={()=>{completar()}}
+                onClick={() => {
+                    completar();
+                }}
             >
                 V
             </span>
             <p className={`${tareas.completada && "tarea--completada"} text`}>
                 {tareas.tarea}
             </p>
-            <span className="icon X X--activo">X</span>
+            <span
+                className="icon X X--activo"
+                onClick={() => {
+                    eliminar();
+                }}
+            >
+                X
+            </span>
         </li>
     );
 }

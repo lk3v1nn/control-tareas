@@ -14,7 +14,34 @@ const tareaDatos = [
     { tarea: "Lavar carro", completada: false },
     { tarea: "Dormir un rato", completada: false },
     { tarea: "Preparar el almuerzo ", completada: true },
-    { tarea: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", completada: true },
+    {
+        tarea: "aaaaaaaaaaaaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
+        completada: true,
+    },
+    {
+        tarea: "aaaaaaaaaaaaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
+        completada: true,
+    },
+    {
+        tarea: "aaaaaaaaaaaaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
+        completada: true,
+    },
+    {
+        tarea: "aaaaaaaaaaaaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
+        completada: true,
+    },
+    {
+        tarea: "aaaaaaaaaaaaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
+        completada: true,
+    },
+    {
+        tarea: "aaaaaaaaaaaaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
+        completada: true,
+    },
+    {
+        tarea: "aaaaaaaaaaaaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
+        completada: true,
+    },
 ];
 
 function App() {
@@ -43,6 +70,11 @@ function App() {
         setTareas(nuevoTareas);
     };
 
+    const eliminarTarea = (text) => {
+      const nuevoTareas = tarea.filter((tarea) => tarea.tarea != text)
+      setTareas(nuevoTareas)
+    };
+
     return (
         <div className="app">
             <div className="appLeft centrar">
@@ -68,6 +100,9 @@ function App() {
                             tareas={task}
                             completar={() => {
                                 completarTarea(task.tarea);
+                            }}
+                            eliminar={()=>{
+                              eliminarTarea(task.tarea)
                             }}
                         />
                     ))}

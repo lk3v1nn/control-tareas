@@ -1,0 +1,26 @@
+.lista{
+    overflow: auto;
+}
+.lista {
+    --sb-track-color: #ffffff;
+    --sb-thumb-color: #00d1ce;
+    --sb-size: 13px;
+  
+    scrollbar-color: var(--sb-thumb-color) 
+                     var(--sb-track-color);
+  }
+  
+  .lista::-webkit-scrollbar {
+    width: var(--sb-size) 
+  }
+  
+  .lista::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 1px;
+  }
+  
+  .lista::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 1px;
+    
+    }

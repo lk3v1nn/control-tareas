@@ -3,7 +3,7 @@ import "../style/TareaLista.css"
 
 function TareaLista(props){
   return(
-    <ul>
+    <ul className='lista'>
       {props.children}
     </ul>
   );
