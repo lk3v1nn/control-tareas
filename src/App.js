@@ -45,18 +45,29 @@ const tareaDatos = [
 ];
 
 function App() {
-    const [tarea, setTareas] = React.useState(tareaDatos);
+    //Guarda el array de tareas en Local Storage
+    const tareasString = JSON.stringify(tareaDatos);
+    localStorage.setItem("tareas_V1", tareasString);
+    //Consulta el Local Storage para obtener las tareas
+    let tareasLSParser = [];
+    const tareasLS = localStorage.getItem("tareas_V1");
+    if (tareasLS) {
+        tareasLSParser = JSON.parse(tareasLS);
+    }
+    const [tarea, setTareas] = React.useState(tareasLSParser);
+
+    //Total de tareas
+    const tareasTotal = tarea.length;
+    //Numero de tareas completadas
     const tareasCompletadas = tarea.filter(
         (tarea) => tarea.completada === true
     ).length;
-    const tareasTotal = tarea.length;
 
+    //Filtra tareas segun la palabra del buscador (de este array es que se toman las tareas que se renderizan)
     const [valorBuscado, setvalorBuscado] = React.useState("");
     const tareasBuscadas = tarea.filter((tarea) =>
         tarea.tarea.toUpperCase().includes(valorBuscado.toUpperCase())
     );
-    //   tareasBuscadas.map(t => console.log(t.tarea))
-    console.log(tareasBuscadas);
 
     const completarTarea = (text) => {
         const nuevoTareas = [...tarea];
@@ -68,11 +79,13 @@ function App() {
             ? (nuevoTareas[indexTarea].completada = true)
             : (nuevoTareas[indexTarea].completada = false);
         setTareas(nuevoTareas);
+        localStorage.setItem("tareas_V1", JSON.stringify(nuevoTareas));
     };
 
     const eliminarTarea = (text) => {
-      const nuevoTareas = tarea.filter((tarea) => tarea.tarea != text)
-      setTareas(nuevoTareas)
+        const nuevoTareas = tarea.filter((tarea) => tarea.tarea !== text);
+        setTareas(nuevoTareas);
+        localStorage.setItem("tareas_V1", JSON.stringify(nuevoTareas));
     };
 
     return (
@@ -101,8 +114,8 @@ function App() {
                             completar={() => {
                                 completarTarea(task.tarea);
                             }}
-                            eliminar={()=>{
-                              eliminarTarea(task.tarea)
+                            eliminar={() => {
+                                eliminarTarea(task.tarea);
                             }}
                         />
                     ))}
