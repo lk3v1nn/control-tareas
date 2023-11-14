@@ -1,16 +1,9 @@
-.icon{
-
-}
 .Check{
   position: absolute;
   left: 4px;
-  transition: .3s linear;
 }
-.Check:hover{
-  cursor: pointer;
-}
-.Check--activo{
-  color: rgb(18, 216, 0);
+.icon:hover{
+  transform: scale(1.2);
 }
 
 .Delete{
@@ -18,11 +11,19 @@
   right: 2px;
   top: -10px;
 }
-.Delete:hover{
-  cursor: pointer;
-}
 
 .icon-svg{
     width: 25px;
     height: 25px;
   }
+
+.Check:hover .icon-svg{
+  fill: #00d1ce;
+  cursor: pointer;
+}
+
+.Delete:hover .icon-svg{
+  background-color: rgb(255, 0, 0);
+  border-radius: 6px;
+  cursor: pointer;
+}
