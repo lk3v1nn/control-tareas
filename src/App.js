@@ -1,7 +1,6 @@
 // import logo from "./platzi.webp";
 
 import React from "react";
-// import useState from 'react'
 
 import { TareaContador } from "./components/TareaContador";
 import { TareaBuscador } from "./components/TareaBuscador";
@@ -9,45 +8,45 @@ import { TareaItem } from "./components/TareaItem";
 import { TareaNueva } from "./components/TareaNueva";
 import { TareaLista } from "./components/TareaLista";
 
-const tareaDatos = [
-    { tarea: "Aprender React", completada: false },
-    { tarea: "Lavar carro", completada: false },
-    { tarea: "Dormir un rato", completada: false },
-    { tarea: "Preparar el almuerzo ", completada: true },
-    {
-        tarea: "aaaa1aaaaaaaaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
-        completada: true,
-    },
-    {
-        tarea: "aaaaaaaaa1aaaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
-        completada: true,
-    },
-    {
-        tarea: "aaaaaaaaa1aaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
-        completada: true,
-    },
-    {
-        tarea: "aaaaaaaaaaaaa2aauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
-        completada: true,
-    },
-    {
-        tarea: "aaaaaaaaaaaaaaa3uuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
-        completada: true,
-    },
-    {
-        tarea: "aaaaaaaaaaaaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
-        completada: true,
-    },
-    {
-        tarea: "aaaaaaaaaaaaaaa4uuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
-        completada: true,
-    },
-];
-
 function App() {
     //Guarda el array de tareas en Local Storage
-    const tareasString = JSON.stringify(tareaDatos);
-    localStorage.setItem("tareas_V1", tareasString);
+    // const tareaDatos = [
+    //     { tarea: "Aprender React", completada: false },
+    //     { tarea: "Lavar carro", completada: false },
+    //     { tarea: "Dormir un rato", completada: false },
+    //     { tarea: "Preparar el almuerzo ", completada: true },
+    //     {
+    //         tarea: "aaaa1aaaaaaaaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
+    //         completada: true,
+    //     },
+    //     {
+    //         tarea: "aaaaaaaaa1aaaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
+    //         completada: true,
+    //     },
+    //     {
+    //         tarea: "aaaaaaaaa1aaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
+    //         completada: true,
+    //     },
+    //     {
+    //         tarea: "aaaaaaaaaaaaa2aauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
+    //         completada: true,
+    //     },
+    //     {
+    //         tarea: "aaaaaaaaaaaaaaa3uuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
+    //         completada: true,
+    //     },
+    //     {
+    //         tarea: "aaaaaaaaaaaaaaauuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
+    //         completada: true,
+    //     },
+    //     {
+    //         tarea: "aaaaaaaaaaaaaaa4uuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaiiiiiii eeeee lorem222222222222222222222222 dsadas sadsadsa dsad as das dsa d sadsadsadsadas",
+    //         completada: true,
+    //     },
+    // ];
+    // const tareasString = JSON.stringify(tareaDatos);
+    // localStorage.setItem("tareas_V1", tareasString);
+
     //Consulta el Local Storage para obtener las tareas
     let tareasLSParser = [];
     const tareasLS = localStorage.getItem("tareas_V1");
@@ -78,14 +77,18 @@ function App() {
         nuevoTareas[indexTarea].completada === false
             ? (nuevoTareas[indexTarea].completada = true)
             : (nuevoTareas[indexTarea].completada = false);
-        setTareas(nuevoTareas);
-        localStorage.setItem("tareas_V1", JSON.stringify(nuevoTareas));
+
+        actulizaLocalStorageYEstado(nuevoTareas);
     };
 
     const eliminarTarea = (text) => {
         const nuevoTareas = tarea.filter((tarea) => tarea.tarea !== text);
-        setTareas(nuevoTareas);
-        localStorage.setItem("tareas_V1", JSON.stringify(nuevoTareas));
+        actulizaLocalStorageYEstado(nuevoTareas);
+    };
+
+    const actulizaLocalStorageYEstado = (datos) => {
+        localStorage.setItem("tareas_V1", JSON.stringify(datos));
+        setTareas(datos);
     };
 
     return (
