@@ -8,6 +8,22 @@ import { TareaItem } from "./components/TareaItem";
 import { TareaNueva } from "./components/TareaNueva";
 import { TareaLista } from "./components/TareaLista";
 
+function useLocalStorage(nombreItemLS, initialValue) {
+    //Consulta los datos guardados en LS
+    let itemParse = initialValue;
+    const itemLS = localStorage.getItem(nombreItemLS);
+    if (itemLS) {
+        itemParse = JSON.parse(itemLS);
+    }
+
+    const [item, setItem] = React.useState(itemParse);
+
+    const actulizaLocalStorageYEstado = (datos) => {
+        localStorage.setItem(nombreItemLS, JSON.stringify(datos));
+        setItem(datos);
+    };
+}
+
 function App() {
     //Guarda el array de tareas en Local Storage
     // const tareaDatos = [
@@ -48,11 +64,7 @@ function App() {
     // localStorage.setItem("tareas_V1", tareasString);
 
     //Consulta el Local Storage para obtener las tareas
-    let tareasLSParser = [];
-    const tareasLS = localStorage.getItem("tareas_V1");
-    if (tareasLS) {
-        tareasLSParser = JSON.parse(tareasLS);
-    }
+
     const [tarea, setTareas] = React.useState(tareasLSParser);
 
     //Total de tareas
@@ -84,11 +96,6 @@ function App() {
     const eliminarTarea = (text) => {
         const nuevoTareas = tarea.filter((tarea) => tarea.tarea !== text);
         actulizaLocalStorageYEstado(nuevoTareas);
-    };
-
-    const actulizaLocalStorageYEstado = (datos) => {
-        localStorage.setItem("tareas_V1", JSON.stringify(datos));
-        setTareas(datos);
     };
 
     return (
