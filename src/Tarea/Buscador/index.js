@@ -1,7 +1,6 @@
-import "../style/TareaBuscador.css";
-import lupa from "../icons/lupa.png";
+import "./Buscador.css";
 import React from 'react';
-import { ReactComponent as Lupa} from "../icons/search.svg";
+import { ReactComponent as Lupa} from "./search.svg";
 
 function TareaBuscador({valorBuscado, setvalorBuscado}) {
   

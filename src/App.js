@@ -2,10 +2,10 @@
 
 import React from "react";
 
-import { TareaContador } from "./components/TareaContador";
-import { TareaBuscador } from "./components/TareaBuscador";
+import { TareaContador } from "./Tarea/Contador";
+import { TareaBuscador } from "./Tarea/Buscador";
 import { TareaItem } from "./components/TareaItem";
-import { TareaNueva } from "./components/TareaNueva";
+import { TareaNueva } from "./Tarea/Nuevo";
 import { TareaLista } from "./components/TareaLista";
 
 function useLocalStorage(nombreItemLS, initialValue) {

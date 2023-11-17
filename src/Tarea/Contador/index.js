@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/TareaContador.css";
+import "./Contador.css";
 
 function TareaContador({ completadas, total }) {
     return (
