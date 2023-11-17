@@ -22,6 +22,7 @@ function useLocalStorage(nombreItemLS, initialValue) {
         localStorage.setItem(nombreItemLS, JSON.stringify(datos));
         setItem(datos);
     };
+    return [item, actulizaLocalStorageYEstado];
 }
 
 function App() {
@@ -63,9 +64,9 @@ function App() {
     // const tareasString = JSON.stringify(tareaDatos);
     // localStorage.setItem("tareas_V1", tareasString);
 
-    //Consulta el Local Storage para obtener las tareas
+    // Consulta el Local Storage para obtener las tareas
 
-    const [tarea, setTareas] = React.useState(tareasLSParser);
+    const [tarea, guardarTareas] = useLocalStorage("tareas_V1", []);
 
     //Total de tareas
     const tareasTotal = tarea.length;
@@ -90,12 +91,12 @@ function App() {
             ? (nuevoTareas[indexTarea].completada = true)
             : (nuevoTareas[indexTarea].completada = false);
 
-        actulizaLocalStorageYEstado(nuevoTareas);
+        guardarTareas(nuevoTareas);
     };
 
     const eliminarTarea = (text) => {
         const nuevoTareas = tarea.filter((tarea) => tarea.tarea !== text);
-        actulizaLocalStorageYEstado(nuevoTareas);
+        guardarTareas(nuevoTareas);
     };
 
     return (
@@ -136,3 +137,5 @@ function App() {
 }
 
 export default App;
+
+//SERVITRANG/Servitrang2016
