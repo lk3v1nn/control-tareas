@@ -1,29 +1,8 @@
 // import logo from "./platzi.webp";
 
 import React from "react";
-
-import { TareaContador } from "./Tarea/Contador";
-import { TareaBuscador } from "./Tarea/Buscador";
-import { TareaItem } from "./components/TareaItem";
-import { TareaNueva } from "./Tarea/Nuevo";
-import { TareaLista } from "./components/TareaLista";
-
-function useLocalStorage(nombreItemLS, initialValue) {
-    //Consulta los datos guardados en LS
-    let itemParse = initialValue;
-    const itemLS = localStorage.getItem(nombreItemLS);
-    if (itemLS) {
-        itemParse = JSON.parse(itemLS);
-    }
-
-    const [item, setItem] = React.useState(itemParse);
-
-    const actulizaLocalStorageYEstado = (datos) => {
-        localStorage.setItem(nombreItemLS, JSON.stringify(datos));
-        setItem(datos);
-    };
-    return [item, actulizaLocalStorageYEstado];
-}
+import { useLocalStorage } from "./useLocalStorage";
+import { AppTareasUI } from "./appTareasUI";
 
 function App() {
     //Guarda el array de tareas en Local Storage
@@ -101,37 +80,15 @@ function App() {
 
     return (
         <div className="app">
-            <div className="appLeft centrar">
-                <div className="cajonIzquierdo">
-                    <TareaContador
-                        completadas={tareasCompletadas}
-                        total={tareasTotal}
-                    />
-                    <TareaNueva />
-                </div>
-            </div>
-
-            <div className="appRight centrar">
-                <TareaBuscador
-                    valorBuscado={valorBuscado}
-                    setvalorBuscado={setvalorBuscado}
-                />
-
-                <TareaLista>
-                    {tareasBuscadas.map((task) => (
-                        <TareaItem
-                            key={task.tarea}
-                            tareas={task}
-                            completar={() => {
-                                completarTarea(task.tarea);
-                            }}
-                            eliminar={() => {
-                                eliminarTarea(task.tarea);
-                            }}
-                        />
-                    ))}
-                </TareaLista>
-            </div>
+            <AppTareasUI
+                tareasCompletadas={tareasCompletadas}
+                tareasTotal={tareasTotal}
+                valorBuscado={valorBuscado}
+                setvalorBuscado={setvalorBuscado}
+                tareasBuscadas={tareasBuscadas}
+                completarTarea={completarTarea}
+                eliminarTarea={eliminarTarea}
+            />
         </div>
     );
 }

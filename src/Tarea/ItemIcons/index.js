@@ -1,9 +1,9 @@
-import "../style/TareaItemIconos.css";
+import "./itemIconos.css";
 
 import React from "react";
 
-import { ReactComponent as CheckSVG } from "../icons/check.svg";
-import { ReactComponent as DeleteSVG } from "../icons/delete.svg";
+import { ReactComponent as CheckSVG } from "./check.svg";
+import { ReactComponent as DeleteSVG } from "./delete.svg";
 
 const IconsTypes = {
     Check: (color) => <CheckSVG className="icon-svg" fill={color} />,

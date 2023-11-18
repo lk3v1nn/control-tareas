@@ -1,6 +1,6 @@
 import React from "react";
-import "../style/TareaItem.css";
-import { TareaItemIcon } from "./TareaItemIcons";
+import "./Item.css";
+import { TareaItemIcon } from "../ItemIcons";
 
 function TareaItem({ tareas, completar, eliminar }) {
     return (
