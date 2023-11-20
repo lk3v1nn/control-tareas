@@ -45,7 +45,7 @@ function App() {
 
     // Consulta el Local Storage para obtener las tareas
 
-    const [tarea, guardarTareas] = useLocalStorage("tareas_V1", []);
+    const {item: tarea, actulizaLocalStorageYEstado:guardarTareas, cargando, error} = useLocalStorage("tareas_V1", []);
 
     //Total de tareas
     const tareasTotal = tarea.length;
@@ -81,6 +81,8 @@ function App() {
     return (
         <div className="app">
             <AppTareasUI
+                cargando={cargando}
+                error={error}
                 tareasCompletadas={tareasCompletadas}
                 tareasTotal={tareasTotal}
                 valorBuscado={valorBuscado}

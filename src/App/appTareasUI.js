@@ -4,16 +4,19 @@ import { TareaNueva } from "../Tarea/Nuevo";
 import { TareaBuscador } from "../Tarea/Buscador";
 import { TareaLista } from "../Tarea/Lista";
 import { TareaItem } from "../Tarea/Item";
+import { Cargando } from "../Tarea/MensajeCargando";
 
-function AppTareasUI(
-    {tareasCompletadas,
+function AppTareasUI({
+    cargando,
+    error,
+    tareasCompletadas,
     tareasTotal,
     valorBuscado,
     setvalorBuscado,
     tareasBuscadas,
     completarTarea,
-    eliminarTarea}
-) {
+    eliminarTarea,
+}) {
     return (
         <>
             <div className="appLeft centrar">
@@ -31,8 +34,13 @@ function AppTareasUI(
                     valorBuscado={valorBuscado}
                     setvalorBuscado={setvalorBuscado}
                 />
-
+                {error && <p>Ocurrio un Error!!! </p>}
+                {!cargando && tareasBuscadas.length === 0 && (
+                    <p>no hay tareas</p>
+                )}
                 <TareaLista>
+                    {cargando && <Cargando />}
+
                     {tareasBuscadas.map((task) => (
                         <TareaItem
                             key={task.tarea}
