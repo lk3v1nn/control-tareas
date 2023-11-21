@@ -1,0 +1,26 @@
+.textCargandoContador{
+    background-color: red;
+    width: 85%;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(270deg, #ffffff85, rgba(255, 255, 255, 0.2), #ffffff85);
+    background-size: 600% 600%;
+    animation: Gradient 2s ease infinite
+}
+
+.buttonCargandoContador{
+    background-color: red;
+    width: 55px;
+    height: 55px;
+    margin-top: 25px;
+    border-radius: 50%;
+    background: linear-gradient(270deg, #ffffff85, rgba(255, 255, 255, 0.2), #ffffff85);
+    background-size: 600% 600%;
+        animation: Gradient 2s ease infinite;
+}
+
+@keyframes Gradient{
+    0%{background-color: rgba(0, 0, 0, 0.2);}
+    50% {background-color: rgba(255, 255, 255, 0.244);}
+    100%{background-color: rgba(0, 0, 0, 0.2);}
+}

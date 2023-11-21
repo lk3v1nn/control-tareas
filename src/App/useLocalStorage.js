@@ -25,7 +25,7 @@ function useLocalStorage(nombreItemLS, initialValue) {
                 setCargando(false);
                 setError(true);
             }
-        }, 2000);
+        }, 4000);
     }, []);
 
     //actualiza los datos

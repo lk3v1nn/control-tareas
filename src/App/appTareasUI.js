@@ -4,8 +4,11 @@ import { TareaNueva } from "../Tarea/Nuevo";
 import { TareaBuscador } from "../Tarea/Buscador";
 import { TareaLista } from "../Tarea/Lista";
 import { TareaItem } from "../Tarea/Item";
-import { Cargando } from "../Tarea/MensajeCargando";
+import { Cargando } from "../Tarea/CargandoLista";
 import { MensajeError } from "../Tarea/MensajeError";
+import { CargandoContador } from "../Tarea/CargandoContador";
+import { Tablero } from "../Tarea/Tablero";
+import { CargandoTablero } from "../Tarea/CargandoTablero";
 
 function AppTareasUI({
     cargando,
@@ -21,13 +24,19 @@ function AppTareasUI({
     return (
         <>
             <div className="appLeft centrar">
-                <div className="cajonIzquierdo">
-                    <TareaContador
-                        completadas={tareasCompletadas}
-                        total={tareasTotal}
-                    />
-                    <TareaNueva />
-                </div>
+                {cargando ? (
+                    <CargandoTablero />
+                ) : (
+                    <Tablero>
+                        <>
+                            <TareaContador
+                                completadas={tareasCompletadas}
+                                total={tareasTotal}
+                            />
+                            <TareaNueva />
+                        </>
+                    </Tablero>
+                )}
             </div>
 
             <div className="appRight centrar">
@@ -35,12 +44,13 @@ function AppTareasUI({
                     valorBuscado={valorBuscado}
                     setvalorBuscado={setvalorBuscado}
                 />
-                {error && <MensajeError />}
-                {!cargando && tareasBuscadas.length === 0 && (
-                    <p>no hay tareas</p>
-                )}
-                <TareaLista >
+
+                <TareaLista>
                     {cargando && <Cargando />}
+                    {error && <MensajeError />}
+                    {!cargando && tareasBuscadas.length === 0 && (
+                        <p>no hay tareas</p>
+                    )}
 
                     {tareasBuscadas.map((task) => (
                         <TareaItem
