@@ -6,3 +6,8 @@ ul{
   overflow-y: auto;
   height: calc(100vh - 70px);
 }
+
+.ocultar{
+  display: none;
+  background-color: red;
+}

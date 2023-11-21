@@ -4,7 +4,7 @@ import './scrollbar.css'
 
 function TareaLista(props){
   return(
-    <ul className='lista'>
+    <ul className="lista">
       {props.children}
     </ul>
   );

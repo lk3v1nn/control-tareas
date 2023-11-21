@@ -1,7 +1,7 @@
 .textCargando{
     color: white;
 }
-.container{
+.containerCargando{
     margin: 12px 0;
     min-width: 90%;
     background-color: rgba(255, 255, 255, 0.386);
@@ -16,7 +16,7 @@
     background-size: 600% 600%;
     animation: Gradient 2s ease infinite;
 }
-.add{
+.containerCargando .add{
     height: 25px;
     width: 25px;
     position: relative;
@@ -35,7 +35,7 @@
 
 
 
-.delete{
+.containerCargando .delete{
     width: 25px;
     height: 30px;
     position: absolute;

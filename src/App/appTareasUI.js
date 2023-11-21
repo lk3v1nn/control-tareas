@@ -5,6 +5,7 @@ import { TareaBuscador } from "../Tarea/Buscador";
 import { TareaLista } from "../Tarea/Lista";
 import { TareaItem } from "../Tarea/Item";
 import { Cargando } from "../Tarea/MensajeCargando";
+import { MensajeError } from "../Tarea/MensajeError";
 
 function AppTareasUI({
     cargando,
@@ -34,11 +35,11 @@ function AppTareasUI({
                     valorBuscado={valorBuscado}
                     setvalorBuscado={setvalorBuscado}
                 />
-                {error && <p>Ocurrio un Error!!! </p>}
+                {error && <MensajeError />}
                 {!cargando && tareasBuscadas.length === 0 && (
                     <p>no hay tareas</p>
                 )}
-                <TareaLista>
+                <TareaLista >
                     {cargando && <Cargando />}
 
                     {tareasBuscadas.map((task) => (
