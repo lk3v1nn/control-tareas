@@ -1,38 +1,21 @@
-.textCargando{
-    color: white;
-}
 .containerCargando{
     margin: 12px 0;
     min-width: 90%;
-    background-color: rgba(255, 255, 255, 0.386);
     height: 50px;
     border-radius: 10px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     position: relative;
-
-    background: linear-gradient(270deg, #ffffff85, rgba(255, 255, 255, 0.2), #ffffff85);
-    background-size: 600% 600%;
-    animation: Gradient 2s ease infinite;
 }
+
 .containerCargando .add{
     height: 25px;
     width: 25px;
     position: relative;
     left: 6px;
     border-radius: 8px;
-    background: linear-gradient(270deg, #ffffff85, rgba(255, 255, 255, 0.2), #ffffff85);
-    background-size: 600% 600%;
-    animation: Gradient 2s ease infinite;
 }
-@keyframes Gradient {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-}
-
-
 
 .containerCargando .delete{
     width: 25px;
@@ -41,10 +24,4 @@
     top: -15px;
     right: 10px;
     border-radius: 6px;
-    animation: Gradient2 2s ease infinite;
-}
-@keyframes Gradient2{
-    0%{background-color: rgba(0, 0, 0, 0.2);}
-    50% {background-color: rgba(255, 255, 255, 0.244);}
-    100%{background-color: rgba(0, 0, 0, 0.2);}
 }

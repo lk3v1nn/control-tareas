@@ -1,12 +1,13 @@
 import './cargandoContador.css'
+import '../cargandoSkeleton.css'
 
 import React from "react"
 
 function CargandoContador(){
     return(
         <>
-        <p className="textCargandoContador"></p>
-        <div className="buttonCargandoContador"></div>
+        <p className="textCargandoContador animacionCargandoOscuro"></p>
+        <div className="buttonCargandoContador animacionCargandoOscuro"></div>
         </>
     )
 }

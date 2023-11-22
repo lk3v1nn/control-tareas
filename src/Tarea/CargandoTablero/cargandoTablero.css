@@ -1,5 +1,4 @@
 .cargandoTablero{
-    background-color: red;
     grid-area: left;
     display: flex;
     flex-direction: column;
@@ -9,13 +8,4 @@
     width: 80%;
     margin: 60px 0;
     border-radius: 10px;
-    background: linear-gradient(270deg, #ffffff85, rgba(255, 255, 255, 0.2), #ffffff85);
-    background-size: 600% 600%;
-    /* background-size: 400% 400%; */
-    animation: GradientTablero 2s ease infinite;
-}
-@keyframes GradientTablero{
-    0%{background-color: rgba(0, 0, 0, 0.2);}
-    50% {background-color: rgba(255, 255, 255, 0.244);}
-    100%{background-color: rgba(0, 0, 0, 0.2);}
 }

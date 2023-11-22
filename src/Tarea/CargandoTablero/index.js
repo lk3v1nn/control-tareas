@@ -4,7 +4,7 @@ import { CargandoContador } from "../CargandoContador"
 
 function CargandoTablero() {
     return(
-        <div className="cargandoTablero">
+        <div className="cargandoTablero animacionCargandoClaro">
             <CargandoContador/>
         </div>
     )
