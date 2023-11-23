@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
+import react from "react";
 
 const contextTareas = React.createContext();
 
@@ -43,6 +44,8 @@ function ProviderTareas({ children }) {
         guardarTareas(nuevoTareas);
     };
 
+    const [mostrarModal, setMostrarModal] = react.useState(false);
+
     return (
         <contextTareas.Provider
             value={{
@@ -55,6 +58,8 @@ function ProviderTareas({ children }) {
                 tareasBuscadas,
                 completarTarea,
                 eliminarTarea,
+                mostrarModal,
+                setMostrarModal
             }}
         >
             {children}
