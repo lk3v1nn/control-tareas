@@ -1,5 +1,5 @@
 import './cargandoContador.css'
-import '../cargandoSkeleton.css'
+import '../../../cargandoSkeleton.css'
 
 import React from "react"
 

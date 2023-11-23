@@ -4,23 +4,14 @@ import { TareaNueva } from "../Tarea/Nuevo";
 import { TareaBuscador } from "../Tarea/Buscador";
 import { TareaLista } from "../Tarea/Lista";
 import { TareaItem } from "../Tarea/Item";
-import { Cargando } from "../Tarea/CargandoLista";
+import { Cargando } from "../Tarea/Cargando/Lista";
 import { MensajeError } from "../Tarea/MensajeError";
-import { CargandoContador } from "../Tarea/CargandoContador";
 import { Tablero } from "../Tarea/Tablero";
-import { CargandoTablero } from "../Tarea/CargandoTablero";
+import { CargandoTablero } from "../Tarea/Cargando/Tablero";
+import { contextTareas } from "../Tarea/ContextTarea";
 
-function AppTareasUI({
-    cargando,
-    error,
-    tareasCompletadas,
-    tareasTotal,
-    valorBuscado,
-    setvalorBuscado,
-    tareasBuscadas,
-    completarTarea,
-    eliminarTarea,
-}) {
+function AppTareasUI() {
+    const { cargando, error } = React.useContext(contextTareas);
     return (
         <>
             <div className="appLeft centrar">
@@ -29,10 +20,7 @@ function AppTareasUI({
                 ) : (
                     <Tablero>
                         <>
-                            <TareaContador
-                                completadas={tareasCompletadas}
-                                total={tareasTotal}
-                            />
+                            <TareaContador />
                             <TareaNueva />
                         </>
                     </Tablero>
@@ -40,31 +28,33 @@ function AppTareasUI({
             </div>
 
             <div className="appRight centrar">
-                <TareaBuscador
-                    valorBuscado={valorBuscado}
-                    setvalorBuscado={setvalorBuscado}
-                />
+                <TareaBuscador />
 
-                <TareaLista>
-                    {cargando && <Cargando />}
-                    {error && <MensajeError />}
-                    {!cargando && tareasBuscadas.length === 0 && (
-                        <p>no hay tareas</p>
+                <contextTareas.Consumer>
+                    {({ tareasBuscadas, completarTarea, eliminarTarea }) => (
+                        <TareaLista>
+                            {/* //skeleton loadings */}
+                            {cargando && <Cargando />}
+                            {error && <MensajeError />}
+                            {!cargando && tareasBuscadas.length === 0 && (
+                                <p>no hay tareas</p>
+                            )}
+
+                            {tareasBuscadas.map((task) => (
+                                <TareaItem
+                                    key={task.tarea}
+                                    tareas={task}
+                                    completar={() => {
+                                        completarTarea(task.tarea);
+                                    }}
+                                    eliminar={() => {
+                                        eliminarTarea(task.tarea);
+                                    }}
+                                />
+                            ))}
+                        </TareaLista>
                     )}
-
-                    {tareasBuscadas.map((task) => (
-                        <TareaItem
-                            key={task.tarea}
-                            tareas={task}
-                            completar={() => {
-                                completarTarea(task.tarea);
-                            }}
-                            eliminar={() => {
-                                eliminarTarea(task.tarea);
-                            }}
-                        />
-                    ))}
-                </TareaLista>
+                </contextTareas.Consumer>
             </div>
         </>
     );

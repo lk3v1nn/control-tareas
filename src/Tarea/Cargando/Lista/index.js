@@ -1,6 +1,6 @@
 import React from "react";
 import "./MensajeCargando.css";
-import '../cargandoSkeleton.css'
+import '../../cargandoSkeleton.css'
 
 function Cargando() {
     return (

@@ -1,15 +1,18 @@
 import React from "react";
 import "./Contador.css";
+import { contextTareas } from "../ContextTarea";
 
-function TareaContador({ completadas, total }) {
+function TareaContador() {
+    const { tareasCompletadas, tareasTotal } = React.useContext(contextTareas);
     return (
         <>
-            {completadas === total ? (
+            {tareasCompletadas === tareasTotal ? (
                 <h3>No tienes tareas pendientes 🥳</h3>
             ) : (
                 <h3>
-                    Has completado <span className="nums">{completadas}</span>{" "}
-                    de <span className="nums">{total}</span> tareas
+                    Has completado{" "}
+                    <span className="nums">{tareasCompletadas}</span> de{" "}
+                    <span className="nums">{tareasTotal}</span> tareas
                 </h3>
             )}
         </>

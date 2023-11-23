@@ -1,8 +1,10 @@
 import "./Buscador.css";
 import React from 'react';
 import { ReactComponent as Lupa} from "./search.svg";
+import { contextTareas } from "../ContextTarea";
 
-function TareaBuscador({valorBuscado, setvalorBuscado}) {
+function TareaBuscador() {
+  const {valorBuscado, setvalorBuscado} = React.useContext(contextTareas)
   
   return (
     <div className="Buscador">
