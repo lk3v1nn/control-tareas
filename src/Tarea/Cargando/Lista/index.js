@@ -6,7 +6,7 @@ function Cargando() {
     return (
         <>
         {/* <h3 className="textCargando">Cargando tareas...</h3> */}
-            {Array.from({ length: 3 }).map((index) => {
+            {Array.from({ length: 3 }).map((_, index) => {
                 return (
                     <div className="containerCargando animacionCargandoClaro" key={index}>
                         <div className="add animacionCargandoOscuro"></div>

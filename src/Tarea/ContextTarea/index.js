@@ -44,6 +44,12 @@ function ProviderTareas({ children }) {
         guardarTareas(nuevoTareas);
     };
 
+    const agregarTarea = (text) =>{
+        const nuevaTarea = {tarea: text, completada: false}
+        const tareas = [nuevaTarea, ...tarea]
+        guardarTareas(tareas)
+    }
+
     const [mostrarModal, setMostrarModal] = react.useState(false);
 
     return (
@@ -58,6 +64,7 @@ function ProviderTareas({ children }) {
                 tareasBuscadas,
                 completarTarea,
                 eliminarTarea,
+                agregarTarea,
                 mostrarModal,
                 setMostrarModal
             }}
