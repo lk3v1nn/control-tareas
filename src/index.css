@@ -13,17 +13,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
-  background: rgb(255, 255, 255);
-    background: radial-gradient(circle, rgba(0,209,206,0.591707459350928) 0%, rgba(25,165,255,1) 100%);
-  backdrop-filter: blur(40px);
-/* From https://css.glass */
 
-
-  /* background-image: url("../images/fondo.webp");
-  background-repeat: no-repeat;
-  background-size: cover; */
-  /* backdrop-filter: blur(10px); */
+  background-image: linear-gradient(90deg, rgb(30, 158, 253) 0%, rgb(30, 158, 253) 24%,rgb(24, 148, 250) 24%, rgb(24, 148, 250) 35%,rgb(19, 137, 247) 35%, rgb(19, 137, 247) 59%,rgb(13, 127, 243) 59%, rgb(13, 127, 243) 99%,rgb(7, 116, 240) 99%, rgb(7, 116, 240) 100%),linear-gradient(45deg, rgb(30, 158, 253) 0%, rgb(30, 158, 253) 24%,rgb(24, 148, 250) 24%, rgb(24, 148, 250) 35%,rgb(19, 137, 247) 35%, rgb(19, 137, 247) 59%,rgb(13, 127, 243) 59%, rgb(13, 127, 243) 99%,rgb(7, 116, 240) 99%, rgb(7, 116, 240) 100%),linear-gradient(135deg, rgb(30, 158, 253) 0%, rgb(30, 158, 253) 24%,rgb(24, 148, 250) 24%, rgb(24, 148, 250) 35%,rgb(19, 137, 247) 35%, rgb(19, 137, 247) 59%,rgb(13, 127, 243) 59%, rgb(13, 127, 243) 99%,rgb(7, 116, 240) 99%, rgb(7, 116, 240) 100%),linear-gradient(90deg, rgb(154, 63, 150),rgb(8, 180, 21)); background-blend-mode:overlay,overlay,overlay,normal;
 }
 
 code {

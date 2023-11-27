@@ -19,18 +19,28 @@ function NuevoForm() {
                     }}
                 >
                     <label className="textNuevoForm">Crea una tarea</label>
-                    <textarea name='textarea' className="textareaNuevoForm" placeholder='Escribe algo aqui...' required />
-                    <button type="submit" className="buttonNuevoForm buttonCrearNuevoForm">
-                        Crear
-                    </button>
-                    <button
-                        className="buttonNuevoForm buttonCancelarNuevoForm"
-                        onClick={() => {
-                            setMostrarModal(false);
-                        }}
-                    >
-                        Cancelar
-                    </button>
+                    <textarea
+                        name="textarea"
+                        className="textareaNuevoForm"
+                        placeholder="Escribe algo aqui..."
+                        required
+                    />
+                    <div>
+                        <button
+                            type="submit"
+                            className="buttonNuevoForm buttonCrearNuevoForm"
+                        >
+                            Crear
+                        </button>
+                        <button
+                            className="buttonNuevoForm buttonCancelarNuevoForm"
+                            onClick={() => {
+                                setMostrarModal(false);
+                            }}
+                        >
+                            Cancelar
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -1,6 +1,7 @@
 .container{
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(30, 35, 121),rgba(45, 107, 187, 0.359));
+    backdrop-filter: blur(1px);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -18,8 +19,9 @@
 }
 .formNuevoForm{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 .textNuevoForm{
     /* color: white; */
@@ -29,7 +31,7 @@
 }
 .textareaNuevoForm{
     background-color: rgba(250, 250, 250);
-    width: 95%;
+    min-width: 95%;
     height: 100px;
     border: 2px solid #7474746d;
     border-radius: 8px;
