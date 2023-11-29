@@ -12,7 +12,7 @@ function useLocalStorage(nombreItemLS, initialValue) {
                 //Consulta los datos guardados en LS
                 const itemLS = localStorage.getItem(nombreItemLS);
                 if (!itemLS) {
-                    localStorage.set(
+                    localStorage.setItem(
                         "nombreItemLS",
                         JSON.stringify(initialValue)
                     );
