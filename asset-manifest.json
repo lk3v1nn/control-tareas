@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/curso-react-intro/static/css/main.bbce1e86.css",
-    "main.js": "/curso-react-intro/static/js/main.84e7f53e.js",
-    "index.html": "/curso-react-intro/index.html",
-    "static/media/delete.svg": "/curso-react-intro/static/media/delete.7018c4465589031bd51c8efbe21df9ca.svg",
-    "static/media/check.svg": "/curso-react-intro/static/media/check.e9a948bba52a34123d2ed7aeda0ea495.svg",
-    "main.bbce1e86.css.map": "/curso-react-intro/static/css/main.bbce1e86.css.map",
-    "main.84e7f53e.js.map": "/curso-react-intro/static/js/main.84e7f53e.js.map"
+    "main.css": "/lk3v1nn/control-tareas/static/css/main.ad1e28dd.css",
+    "main.js": "/lk3v1nn/control-tareas/static/js/main.27d898f2.js",
+    "static/media/delete.svg": "/lk3v1nn/control-tareas/static/media/delete.a9b64e9ca0b6a53065cc3e93bdc87bb0.svg",
+    "index.html": "/lk3v1nn/control-tareas/index.html",
+    "static/media/check.svg": "/lk3v1nn/control-tareas/static/media/check.f403832f88830d0c37c663dda8090b45.svg",
+    "static/media/search.svg": "/lk3v1nn/control-tareas/static/media/search.cd49a03a0ae7088cf9400e6d5dd3d780.svg",
+    "main.ad1e28dd.css.map": "/lk3v1nn/control-tareas/static/css/main.ad1e28dd.css.map",
+    "main.27d898f2.js.map": "/lk3v1nn/control-tareas/static/js/main.27d898f2.js.map"
   },
   "entrypoints": [
-    "static/css/main.bbce1e86.css",
-    "static/js/main.84e7f53e.js"
+    "static/css/main.ad1e28dd.css",
+    "static/js/main.27d898f2.js"
   ]
 }
