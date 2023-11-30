@@ -31,7 +31,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://github.com/lk3v1nn/control-tareas",
+  "homepage": "/control-tareas",
   "devDependencies": {
     "gh-pages": "^6.1.0"
   }
