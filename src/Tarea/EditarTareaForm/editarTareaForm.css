@@ -1,4 +1,4 @@
-.container{
+.containerEditarTareaform   {
     background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(30, 35, 121),rgba(45, 107, 187, 0.359));
     backdrop-filter: blur(1px);
     width: 100%;
@@ -9,14 +9,13 @@
     justify-content: center;
     align-items: center;
 }
-
 .card{
     background-color: rgba(255, 255, 255);
     width: 50%;
     padding: 10px;
     border-radius: 10px;
 }
-.formNuevoForm{
+.formEditarForm{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,7 +37,7 @@
     padding: 6px;
     border: 1px solid blakc;
 }
-.buttonNuevoForm{
+.buttonEditarForm{
     box-shadow: 1px 1px 0 1px rgb(145, 144, 144);
     font-size: 15px;
     width: 120px;
@@ -48,27 +47,27 @@
     margin: 10px;
     transition: 0.4s;
 }
-.buttonNuevoForm:hover{
+.buttonEditarForm:hover{
     cursor: pointer;
 }
 
-.buttonCrearNuevoForm{
+.buttonAceptarEditarForm{
     border: 2px solid #00d1ce;
     color: white;
     background-color: #00d1ce;
 }
-.buttonCrearNuevoForm:hover{
+.buttonAceptarEditarForm:hover{
     background-color: #ffffff;
     color: #00d1ce;
     transform: scale(1.1) ;
 }
 
-.buttonCancelarNuevoForm{
+.buttonCancelarEditarForm{
     border: 2px solid rgba(201, 0, 0, 0.8);
     background-color: rgba(201, 0, 0, 0.8);
     color: white;
 }
-.buttonCancelarNuevoForm:hover{
+.buttonCancelarEditarForm:hover{
     background-color: white;
     color: rgba(201, 0, 0, 0.8);
     transform: scale(1.1);

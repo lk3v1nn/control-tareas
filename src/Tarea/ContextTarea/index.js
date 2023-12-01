@@ -44,13 +44,25 @@ function ProviderTareas({ children }) {
         guardarTareas(nuevoTareas);
     };
 
-    const agregarTarea = (text) =>{
-        const nuevaTarea = {tarea: text, completada: false}
-        const tareas = [nuevaTarea, ...tarea]
-        guardarTareas(tareas)
-    }
+    const agregarTarea = (text) => {
+        const nuevaTarea = { tarea: text, completada: false };
+        const tareas = [nuevaTarea, ...tarea];
+        guardarTareas(tareas);
+    };
 
-    const [mostrarModal, setMostrarModal] = react.useState(false);
+    const editarTarea = (text, nuevoText) => {
+        const tareaIndex = tarea.findIndex((t) => t.tarea === text);
+        let nuevaTarea = [...tarea];
+        nuevaTarea[tareaIndex].tarea = nuevoText;
+        guardarTareas(nuevaTarea);
+    };
+
+    const [mostrarModalNuevoForm, setMostrarModalNuevoForm] =
+        react.useState(false);
+    const [monstarModalEditarForm, setMonstarModalEditarForm] =
+        react.useState(true);
+        const [tareaAEditar, setTareaAEditar] =
+        react.useState('');
 
     return (
         <contextTareas.Provider
@@ -65,8 +77,13 @@ function ProviderTareas({ children }) {
                 completarTarea,
                 eliminarTarea,
                 agregarTarea,
-                mostrarModal,
-                setMostrarModal
+                editarTarea,
+                tareaAEditar,
+                setTareaAEditar,
+                mostrarModalNuevoForm,
+                monstarModalEditarForm,
+                setMostrarModalNuevoForm,
+                setMonstarModalEditarForm,
             }}
         >
             {children}
@@ -74,4 +91,4 @@ function ProviderTareas({ children }) {
     );
 }
 
-export {contextTareas, ProviderTareas}
+export { contextTareas, ProviderTareas };

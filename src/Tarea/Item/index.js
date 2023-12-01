@@ -2,7 +2,17 @@ import React from "react";
 import "./Item.css";
 import { TareaItemIcon } from "../ItemIcons";
 
-function TareaItem({ tareas, completar, eliminar }) {
+function TareaItem({
+    tareas,
+    completar,
+    eliminar,
+    mostrarModal,
+    setTareaAEditar,
+}) {
+    const Editar = () => {
+        mostrarModal(true);
+        setTareaAEditar(tareas.tarea);
+    };
     return (
         <li className={`Item ${tareas.completada && "Item--completado"}`}>
             <TareaItemIcon
@@ -12,9 +22,22 @@ function TareaItem({ tareas, completar, eliminar }) {
                 onFuncion={completar}
             />
 
-            <p className={`${tareas.completada && "tarea--completada"} text`}>
+            <p
+                className={`${tareas.completada && "tarea--completada"} text`}
+                onClick={() => {
+                    mostrarModal(true);
+                    setTareaAEditar(tareas.tarea);
+                }}
+            >
                 {tareas.tarea}
             </p>
+
+            <TareaItemIcon
+                type={"Edit"}
+                color="white"
+                completada={false}
+                onFuncion={Editar}
+            />
 
             <TareaItemIcon
                 type={"Delete"}

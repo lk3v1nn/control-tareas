@@ -11,9 +11,10 @@ import { CargandoTablero } from "../Tarea/Cargando/Tablero";
 import { Modal } from "../Tarea/Modal";
 import { contextTareas } from "../Tarea/ContextTarea";
 import { NuevoForm } from "../Tarea/NuevoForm";
+import { EditarTareaForm } from "../Tarea/EditarTareaForm";
 
 function AppTareasUI() {
-    const { cargando, error, mostrarModal} = React.useContext(contextTareas);
+    const { cargando, error, mostrarModalNuevoForm, monstarModalEditarForm} = React.useContext(contextTareas);
     return (
         <>
             <div className="appLeft centrar">
@@ -24,11 +25,10 @@ function AppTareasUI() {
                         <>
                             <TareaContador />
                             <TareaNueva />
-                            {mostrarModal && (
-                                <Modal>
-                                    <NuevoForm/>
-                                </Modal>
-                            )}
+                            <Modal>
+                                {mostrarModalNuevoForm && <NuevoForm />}
+                                {monstarModalEditarForm && <EditarTareaForm/>}
+                            </Modal>
                         </>
                     </Tablero>
                 )}
@@ -38,7 +38,13 @@ function AppTareasUI() {
                 <TareaBuscador />
 
                 <contextTareas.Consumer>
-                    {({ tareasBuscadas, completarTarea, eliminarTarea }) => (
+                    {({
+                        tareasBuscadas,
+                        completarTarea,
+                        eliminarTarea,
+                        setMonstarModalEditarForm,
+                        setTareaAEditar
+                    }) => (
                         <TareaLista>
                             {/* //skeleton loadings */}
                             {cargando && <Cargando />}
@@ -57,6 +63,8 @@ function AppTareasUI() {
                                     eliminar={() => {
                                         eliminarTarea(task.tarea);
                                     }}
+                                    mostrarModal={setMonstarModalEditarForm}
+                                    setTareaAEditar={setTareaAEditar}
                                 />
                             ))}
                         </TareaLista>

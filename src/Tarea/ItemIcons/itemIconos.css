@@ -11,19 +11,23 @@
   right: 2px;
   top: -10px;
 }
+.Edit{
+  position: absolute;
+  right: 50px;
+  /* top:   px; */
+}
 
 .icon-svg{
-    width: 25px;
-    height: 25px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
   }
 
 .Check:hover .icon-svg{
   fill: #00d1ce;
-  cursor: pointer;
 }
 
 .Delete:hover .icon-svg{
   background-color: rgb(255, 0, 0);
   border-radius: 6px;
-  cursor: pointer;
 }

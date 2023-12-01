@@ -3,11 +3,11 @@ import "./nuevoForm.css";
 import { contextTareas } from "../ContextTarea";
 
 function NuevoForm() {
-    const { setMostrarModal, agregarTarea } = React.useContext(contextTareas);
+    const { setMostrarModalNuevoForm, agregarTarea } = React.useContext(contextTareas);
     const manejadorForm = (event) => {
         event.preventDefault();
         agregarTarea(event.target.textarea.value);
-        setMostrarModal(false);
+        setMostrarModalNuevoForm(false);
     };
     return (
         <div className="container">
@@ -35,7 +35,7 @@ function NuevoForm() {
                         <button
                             className="buttonNuevoForm buttonCancelarNuevoForm"
                             onClick={() => {
-                                setMostrarModal(false);
+                                setMostrarModalNuevoForm(false);
                             }}
                         >
                             Cancelar

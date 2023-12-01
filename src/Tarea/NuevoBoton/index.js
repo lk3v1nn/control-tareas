@@ -3,9 +3,9 @@ import "./Nuevo.css";
 import { contextTareas } from "../ContextTarea";
 
 function TareaNueva() {
-    const { setMostrarModal } = React.useContext(contextTareas);
+    const { setMostrarModalNuevoForm } = React.useContext(contextTareas);
 
-    return <button className="buttonNuevo" onClick={() => setMostrarModal(true)}>+</button>;
+    return <button className="buttonNuevo" onClick={() => setMostrarModalNuevoForm(true)}>+</button>;
 }
 
 export { TareaNueva };
