@@ -4,6 +4,9 @@ Para empezar clona este repositorio (`git clone`), instalar sus dependencias (`n
 
 La rama principal contiene el código fuente de la aplicacion terminada. En las demás ramas encontrarás el código de las siguientes fases y finalmente el deploy de la aplicación.
 
+## Aplicacion desplegada en:
+https://lk3v1nn.github.io/control-tareas/
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
