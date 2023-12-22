@@ -3,13 +3,22 @@ import "./editarTareaForm.css";
 import { contextTareas } from "../ContextTarea";
 
 function EditarTareaForm() {
-    const { editarTarea, tareaAEditar, setMonstarModalEditarForm } =
+    const { actualizarTareasAPI, tareaAEditar, setMonstarModalEditarForm } =
         useContext(contextTareas);
 
     const manejadorSumit = (event) => {
         event.preventDefault(); // EditarTareaForm()
         const nuevoText = event?.target.textarea.value;
-        editarTarea(tareaAEditar, nuevoText);
+        actualizarTareasAPI({
+            ID: tareaAEditar.ID,
+            TAREA: nuevoText,
+            ESTADO: false,
+            FECHA: "HOY y AYER",
+            IMPORTANTE: true,
+            CATEGORIA: 1,
+            USUARIO_CREADOR: 2,
+            ASIGNACION: 1,
+        });
         setMonstarModalEditarForm(false);
     };
 
@@ -24,7 +33,7 @@ function EditarTareaForm() {
                     <textarea
                         name="textarea"
                         className="textareaNuevoForm"
-                        defaultValue={tareaAEditar}
+                        defaultValue={tareaAEditar.TAREA}
                     />
                     <div>
                         <button

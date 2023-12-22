@@ -3,7 +3,7 @@ import "./Item.css";
 import { TareaItemIcon } from "../ItemIcons";
 
 function TareaItem({
-    tareas,
+    tarea,
     completar,
     eliminar,
     mostrarModal,
@@ -11,25 +11,24 @@ function TareaItem({
 }) {
     const Editar = () => {
         mostrarModal(true);
-        setTareaAEditar(tareas.tarea);
+        setTareaAEditar(tarea);
     };
     return (
-        <li className={`Item ${tareas.completada && "Item--completado"}`}>
+        <li className={`Item ${tarea.ESTADO && "Item--completado"}`}>
             <TareaItemIcon
                 type="Check"
                 color="#a2a2a2"
-                completada={tareas.completada}
+                completada={tarea.ESTADO}
                 onFuncion={completar}
             />
 
             <p
-                className={`${tareas.completada && "tarea--completada"} text`}
+                className={`${tarea.ESTADO && "tarea--completada"} text`}
                 onClick={() => {
-                    mostrarModal(true);
-                    setTareaAEditar(tareas.tarea);
+                    Editar()
                 }}
             >
-                {tareas.tarea}
+                {tarea.TAREA}
             </p>
 
             <TareaItemIcon

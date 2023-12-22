@@ -3,12 +3,20 @@ import "./nuevoForm.css";
 import { contextTareas } from "../ContextTarea";
 
 function NuevoForm() {
-    const { setMostrarModalNuevoForm, agregarTarea } = React.useContext(contextTareas);
+    const { setMostrarModalNuevoForm, agregarTareaAPI } =
+        React.useContext(contextTareas);
+        
     const manejadorForm = (event) => {
         event.preventDefault();
-        agregarTarea(event.target.textarea.value);
+
+        const tareaTextarea = event.target.textarea.value
+        const tarea = tareaTextarea.replaceAll("'", `"`)
+
+        agregarTareaAPI(tarea, 0, "FECHA", 1, 1, 1, 1);
+
         setMostrarModalNuevoForm(false);
     };
+
     return (
         <div className="container">
             <div className="card">

@@ -42,31 +42,32 @@ function AppTareasUI() {
                         tareasBuscadas,
                         completarTarea,
                         eliminarTarea,
+                        eliminarTareaAPI,
                         setMonstarModalEditarForm,
-                        setTareaAEditar
+                        setTareaAEditar,
                     }) => (
                         <TareaLista>
                             {/* //skeleton loadings */}
-                            {cargando && <Cargando />}
+                            {cargando? <Cargando /> :
+                                tareasBuscadas.map((task) => (
+                                    <TareaItem
+                                        key={task.ID}
+                                        tarea={task}
+                                        completar={() => {
+                                            completarTarea(task.ID, task.ESTADO);
+                                        }}
+                                        eliminar={() => {
+                                            eliminarTareaAPI(task.ID);
+                                        }}
+                                        mostrarModal={setMonstarModalEditarForm}
+                                        setTareaAEditar={setTareaAEditar}
+                                    />
+                                ))
+                            }
                             {error && <MensajeError />}
                             {!cargando && tareasBuscadas.length === 0 && (
                                 <p>no hay tareas</p>
                             )}
-
-                            {tareasBuscadas.map((task) => (
-                                <TareaItem
-                                    key={task.tarea}
-                                    tareas={task}
-                                    completar={() => {
-                                        completarTarea(task.tarea);
-                                    }}
-                                    eliminar={() => {
-                                        eliminarTarea(task.tarea);
-                                    }}
-                                    mostrarModal={setMonstarModalEditarForm}
-                                    setTareaAEditar={setTareaAEditar}
-                                />
-                            ))}
                         </TareaLista>
                     )}
                 </contextTareas.Consumer>

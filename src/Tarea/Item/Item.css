@@ -3,7 +3,7 @@
   width: 90%;
   padding: 10px;
   list-style: none;
-  background-color: aliceblue;
+  background-color: rgb(240, 250, 255);
   box-shadow: 1px 1px 4px black;
   margin: 12px 0;
   border-radius: 10px;
@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: .3s linear;
+  transition: 0.5s linear;
 }
 .Item:hover{
   box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.285);
