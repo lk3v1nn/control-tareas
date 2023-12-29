@@ -18,6 +18,7 @@ function EditarTareaForm() {
             CATEGORIA: 1,
             USUARIO_CREADOR: 2,
             ASIGNACION: 1,
+            EQUIPO: 1
         });
         setMonstarModalEditarForm(false);
     };

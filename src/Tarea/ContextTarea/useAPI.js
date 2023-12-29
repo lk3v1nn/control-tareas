@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 
-function useAPI(nombreItemLS, initialValue) {
+function useAPI(initialValue) {
     const [item, setItem] = React.useState(initialValue);
     const [cargando, setCargando] = React.useState(true);
     const [error, setError] = React.useState(false);
@@ -11,10 +11,14 @@ function useAPI(nombreItemLS, initialValue) {
         mostrarTareas();
     }, []);
 
+    const urlAPITareas = 'https://api-control-tareas.onrender.com/tareas/'
+
     //obtiene las tareas de la base de la base de datos
     async function mostrarTareas() {
         try {
-            const response = await axios.get("http://localhost:3800/tareas");
+            const response = await axios.post(urlAPITareas,{
+                pEquipo : 1
+            });
             setItem(response.data[0]);
             console.log("API:", response.data[0]);
             setCargando(false);
@@ -31,10 +35,11 @@ function useAPI(nombreItemLS, initialValue) {
         IMPORTANTE,
         CATEGORIA,
         USUARIO_CREADOR,
-        ASIGNACION
+        ASIGNACION, 
+        EQUIPO
     ) {
         try {
-            axios.post("http://localhost:3800/tareas", {
+            axios.post(urlAPITareas, {
                 pTarea: TAREA,
                 pEstado: ESTADO,
                 pFecha: FECHA,
@@ -42,6 +47,7 @@ function useAPI(nombreItemLS, initialValue) {
                 pCategoria: CATEGORIA,
                 pUsuarioCreador: USUARIO_CREADOR,
                 pAsignacion: ASIGNACION,
+                pEquipo: EQUIPO
             }).then((response)=>{
                 console.log(response);
                 mostrarTareas()                
@@ -57,11 +63,12 @@ function useAPI(nombreItemLS, initialValue) {
         IMPORTANTE,
         CATEGORIA,
         USUARIO_CREADOR,
-        ASIGNACION}
+        ASIGNACION,
+        EQUIPO}
     ) {
         try {
             await axios
-                .put("http://localhost:3800/tareas", {
+                .put(urlAPITareas, {
                     pId: parseInt(ID) || null,
                     pTarea: TAREA? TAREA : null,
                     pEstado: ESTADO == null? null : Number(ESTADO),
@@ -70,6 +77,7 @@ function useAPI(nombreItemLS, initialValue) {
                     pCategoria: parseInt(CATEGORIA) || null,
                     pUsuarioCreador: parseInt(USUARIO_CREADOR) || null,
                     pAsignacion: parseInt(ASIGNACION) || null,
+                    pEquipo : EQUIPO || null
                 })
                 .then(async (response) => {
                     console.log(response);
@@ -84,7 +92,7 @@ function useAPI(nombreItemLS, initialValue) {
         setCargando(true);
         try {
             axios
-                .delete(`http://localhost:3800/tareas/${id}`)
+                .delete(urlAPITareas + id)
                 .then((response) => {
                     mostrarTareas();
                     console.log(response);

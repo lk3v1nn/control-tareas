@@ -13,14 +13,14 @@ function ProviderTareas({ children }) {
         eliminarTareaAPI,
         cargando,
         error,
-    } = useAPI("tareas_V1", []);
+    } = useAPI([]);
 
     //Total de tareas
-    const tareasTotal = tarea.length;
+    const tareasTotal = tarea.length || [];
     //Numero de tareas completadas
     const tareasCompletadas = tarea.filter(
         (tarea) => tarea.ESTADO === true
-    ).length;
+    ).length || [];
 
     //Filtra tareas segun la palabra del buscador (de este array es que se toman las tareas que se renderizan)
     const [valorBuscado, setvalorBuscado] = React.useState("");

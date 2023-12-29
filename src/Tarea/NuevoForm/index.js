@@ -12,7 +12,7 @@ function NuevoForm() {
         const tareaTextarea = event.target.textarea.value
         const tarea = tareaTextarea.replaceAll("'", `"`)
 
-        agregarTareaAPI(tarea, 0, "FECHA", 1, 1, 1, 1);
+        agregarTareaAPI(tarea, 0, "FECHA", 1, 1, 1, 1, 1);
 
         setMostrarModalNuevoForm(false);
     };
