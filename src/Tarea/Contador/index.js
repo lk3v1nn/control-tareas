@@ -10,9 +10,8 @@ function TareaContador() {
                 <h3>No tienes tareas pendientes 🥳</h3>
             ) : (
                 <h3>
-                    Has completado{" "}
-                    <span className="nums">{tareasCompletadas}</span> de{" "}
-                    <span className="nums">{tareasTotal}</span> tareas
+                    <span className="nums">{tareasCompletadas > 0? tareasCompletadas : 0}</span> tareas completadas de{" "}
+                    <span className="nums">{tareasTotal}</span>
                 </h3>
             )}
         </>
