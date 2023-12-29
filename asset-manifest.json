@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/control-tareas/static/css/main.a66074c2.css",
-    "main.js": "/control-tareas/static/js/main.2fb02e6b.js",
+    "main.css": "/control-tareas/static/css/main.3566511a.css",
+    "main.js": "/control-tareas/static/js/main.29e1ed98.js",
     "static/media/delete.svg": "/control-tareas/static/media/delete.a9b64e9ca0b6a53065cc3e93bdc87bb0.svg",
     "static/media/edit.svg": "/control-tareas/static/media/edit.fc303387d764151b3d46497d41989f81.svg",
     "index.html": "/control-tareas/index.html",
     "static/media/check.svg": "/control-tareas/static/media/check.f403832f88830d0c37c663dda8090b45.svg",
     "static/media/search.svg": "/control-tareas/static/media/search.cd49a03a0ae7088cf9400e6d5dd3d780.svg",
-    "main.a66074c2.css.map": "/control-tareas/static/css/main.a66074c2.css.map",
-    "main.2fb02e6b.js.map": "/control-tareas/static/js/main.2fb02e6b.js.map"
+    "main.3566511a.css.map": "/control-tareas/static/css/main.3566511a.css.map",
+    "main.29e1ed98.js.map": "/control-tareas/static/js/main.29e1ed98.js.map"
   },
   "entrypoints": [
-    "static/css/main.a66074c2.css",
-    "static/js/main.2fb02e6b.js"
+    "static/css/main.3566511a.css",
+    "static/js/main.29e1ed98.js"
   ]
 }
