@@ -39,7 +39,7 @@ function useAPI(initialValue) {
         EQUIPO
     ) {
         try {
-            axios.post(urlAPITareas, {
+            axios.post(urlAPITareas + 'agregar', {
                 pTarea: TAREA,
                 pEstado: ESTADO,
                 pFecha: FECHA,
