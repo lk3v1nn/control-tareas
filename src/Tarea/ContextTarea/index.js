@@ -16,7 +16,7 @@ function ProviderTareas({ children }) {
     } = useAPI([]);
 
     //Total de tareas
-    const tareasTotal = tarea.length || [];
+    const tareasTotal = tarea.length || 0;
     //Numero de tareas completadas
     const tareasCompletadas = tarea.filter(
         (tarea) => tarea.ESTADO === true

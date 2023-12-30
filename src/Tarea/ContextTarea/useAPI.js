@@ -38,6 +38,7 @@ function useAPI(initialValue) {
         ASIGNACION, 
         EQUIPO
     ) {
+        setCargando(true)
         try {
             axios.post(urlAPITareas + 'agregar', {
                 pTarea: TAREA,
@@ -66,6 +67,7 @@ function useAPI(initialValue) {
         ASIGNACION,
         EQUIPO}
     ) {
+        setCargando(true)
         try {
             await axios
                 .put(urlAPITareas, {
