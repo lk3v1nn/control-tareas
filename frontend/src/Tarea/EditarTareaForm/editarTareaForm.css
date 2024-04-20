@@ -1,0 +1,74 @@
+.containerEditarTareaform   {
+    background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(30, 35, 121),rgba(45, 107, 187, 0.359));
+    backdrop-filter: blur(1px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    background-color: rgba(255, 255, 255);
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+}
+.formEditarForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.textNuevoForm{
+    /* color: white; */
+    font-weight: 500;
+    font-size: 20px;
+    margin: 5px;
+}
+.textareaNuevoForm{
+    background-color: rgba(250, 250, 250);
+    min-width: 95%;
+    height: 100px;
+    border: 2px solid #7474746d;
+    border-radius: 8px;
+    margin: 5px;
+    padding: 6px;
+    border: 1px solid blakc;
+}
+.buttonEditarForm{
+    box-shadow: 1px 1px 0 1px rgb(145, 144, 144);
+    font-size: 15px;
+    width: 120px;
+    padding: 5px;
+    font-weight: 600;
+    border-radius: 6px;
+    margin: 10px;
+    transition: 0.4s;
+}
+.buttonEditarForm:hover{
+    cursor: pointer;
+}
+
+.buttonAceptarEditarForm{
+    border: 2px solid #00d1ce;
+    color: white;
+    background-color: #00d1ce;
+}
+.buttonAceptarEditarForm:hover{
+    background-color: #ffffff;
+    color: #00d1ce;
+    transform: scale(1.1) ;
+}
+
+.buttonCancelarEditarForm{
+    border: 2px solid rgba(201, 0, 0, 0.8);
+    background-color: rgba(201, 0, 0, 0.8);
+    color: white;
+}
+.buttonCancelarEditarForm:hover{
+    background-color: white;
+    color: rgba(201, 0, 0, 0.8);
+    transform: scale(1.1);
+}

@@ -1,0 +1,13 @@
+ul{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  height: calc(100vh - 70px);
+}
+
+.ocultar{
+  display: none;
+  background-color: red;
+}

@@ -1,0 +1,25 @@
+.containerMensajeError{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 85%;
+    background-color: rgb(255, 0, 0);
+    padding: 5px;
+    margin: 15px 0;
+    border-radius: 0 10px 0 10px;
+    position: relative;
+}
+.textMensajeError{
+    padding: 0;
+    color: white;
+}
+.text2MensajeError{
+    font-size: 15px;
+}
+
+.alertSVG{
+    position: absolute;
+    right: 6px;
+    top: -16px;
+}

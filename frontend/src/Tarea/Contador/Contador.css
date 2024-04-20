@@ -1,0 +1,13 @@
+h3 {
+  font-weight: 400;
+  font-size: 22px;
+  margin: 0;
+  padding: 25px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.nums{
+  font-weight: 800;
+  color: #00d1ce;
+}

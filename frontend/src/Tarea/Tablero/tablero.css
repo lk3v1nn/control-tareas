@@ -1,0 +1,12 @@
+.tablero{
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    margin: 60px 0;
+    border-radius: 10px;
+    background-color:aliceblue;
+}

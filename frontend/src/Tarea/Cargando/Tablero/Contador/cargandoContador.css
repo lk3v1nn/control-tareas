@@ -1,0 +1,12 @@
+.textCargandoContador{
+    width: 85%;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.buttonCargandoContador{
+    width: 55px;
+    height: 55px;
+    margin-top: 25px;
+    border-radius: 50%;
+}

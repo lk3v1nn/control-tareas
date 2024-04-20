@@ -1,0 +1,47 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html{
+  min-height: 100%;
+}
+body {
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-image: linear-gradient(90deg, rgb(30, 158, 253) 0%, rgb(30, 158, 253) 24%,rgb(24, 148, 250) 24%, rgb(24, 148, 250) 35%,rgb(19, 137, 247) 35%, rgb(19, 137, 247) 59%,rgb(13, 127, 243) 59%, rgb(13, 127, 243) 99%,rgb(7, 116, 240) 99%, rgb(7, 116, 240) 100%),linear-gradient(45deg, rgb(30, 158, 253) 0%, rgb(30, 158, 253) 24%,rgb(24, 148, 250) 24%, rgb(24, 148, 250) 35%,rgb(19, 137, 247) 35%, rgb(19, 137, 247) 59%,rgb(13, 127, 243) 59%, rgb(13, 127, 243) 99%,rgb(7, 116, 240) 99%, rgb(7, 116, 240) 100%),linear-gradient(135deg, rgb(30, 158, 253) 0%, rgb(30, 158, 253) 24%,rgb(24, 148, 250) 24%, rgb(24, 148, 250) 35%,rgb(19, 137, 247) 35%, rgb(19, 137, 247) 59%,rgb(13, 127, 243) 59%, rgb(13, 127, 243) 99%,rgb(7, 116, 240) 99%, rgb(7, 116, 240) 100%),linear-gradient(90deg, rgb(154, 63, 150),rgb(8, 180, 21)); background-blend-mode:overlay,overlay,overlay,normal;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.app{
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-rows: 1fr;
+  grid-template-areas: "left right";
+}
+
+.appLeft{
+  grid-area: left;
+}
+
+.appRight{
+  grid-area: right;
+}
+
+.centrar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+

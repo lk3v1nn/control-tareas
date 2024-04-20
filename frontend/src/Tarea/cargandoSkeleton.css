@@ -1,0 +1,15 @@
+.animacionCargandoClaro{
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.8));
+    background-size: 300% 300%;
+    animation: animacionCargando 2s ease-in-out infinite;
+}
+.animacionCargandoOscuro{
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+    background-size: 600% 600%;
+    animation: animacionCargando 0.5s ease-in-out infinite;
+}
+@keyframes animacionCargando {
+    0%{background-position: 0% 50%;}
+    50%{background-position: 50% 100%;}
+    100%{background-position: 0% 50%;}
+}
